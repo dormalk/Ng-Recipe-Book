@@ -4,15 +4,15 @@ import { AuthService } from './auth.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable()
-export class AuthGuard implements CanActivate{
+export class AuthGuard implements CanActivate {
     constructor(private authService: AuthService,
-                private router: Router){}
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean{
-        if(this.authService.isAuthenticated()){
+                private router: Router) { }
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        if (this.authService.isAuthenticated()) {
             return true;
-        }
-        else{
-            this.router.navigate(['/signin']);
+        } else {
+            const source = route.data.source;
+            this.router.navigate(['/signin'], { state: { source }});
         }
     }
 }

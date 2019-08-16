@@ -5,13 +5,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations:[
+    declarations: [
         ShoppingEditComponent,
         ShoppingListComponent
     ],
-    imports:[
+    imports: [
         CommonModule,
         FormsModule
     ]
 })
-export class ShoppingListModule{}
+export class ShoppingListModule { }

@@ -11,7 +11,7 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
 import { SheredModule } from '../shared/shered.module';
 
 @NgModule({
-    declarations:[
+    declarations: [
         RecipesComponent,
         RecipeEditComponent,
         RecipeItemComponent,
@@ -19,13 +19,11 @@ import { SheredModule } from '../shared/shered.module';
         RecipeListComponent,
         RecipeDetailComponent,
     ],
-    imports:[
+    imports: [
         ReactiveFormsModule,
         CommonModule,
         RecipesRoutingModule,
         SheredModule
     ]
 })
-export class RecipesModule{
-    
-}
+export class RecipesModule {}
