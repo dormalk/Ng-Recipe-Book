@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { RecipeService } from '../recipe.service';
@@ -24,6 +24,7 @@ export class RecipeDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.selectedRecipeDatail = this.recipeService.getRecipe(this.id);
+
         }
     )  
   }

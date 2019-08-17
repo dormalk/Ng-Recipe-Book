@@ -1,26 +1,26 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import {DataStorageService} from '../../shared/data-storage.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 import { AuthService } from '../../auth/auth.service';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html'
 })
-export class HeaderComponent{
+export class HeaderComponent {
     constructor(private dataStorageService: DataStorageService,
-                private authService: AuthService){}
-    onSaveData(){
+                public authService: AuthService) { }
+    onSaveData() {
         this.dataStorageService.storeRecipes()
-        .subscribe((respons) => {
-            console.log(respons);
-        });
+            .subscribe((respons) => {
+                console.log(respons);
+            });
     }
 
-    onFatchData(){
+    onFatchData() {
         this.dataStorageService.getRecipes();
     }
 
-    onLogout(){
+    onLogout() {
         this.authService.logout();
     }
 
