@@ -3,10 +3,31 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
 
 export const ADD_INGREDIENT = 'ADD_INGREDIENT';
 export const GET_INGREDIENT = 'GET_INGREDIENT';
+export const ADD_INGREDIENTS = 'ADD_INGREDIENTS';
+export const UPDATE_INGREDIENTS = 'UPDATE_INGREDIENTS';
+export const DELETE_INGREDIENTS = 'DELETE_INGREDIENTS';
+
 
 export class AddIngredient implements Action {
     readonly type = ADD_INGREDIENT;
     constructor(public payload: Ingredient) {}
 }
 
-export type ShoppingListActions = AddIngredient;
+export class AddIngredients implements Action {
+    readonly type = ADD_INGREDIENTS;
+    constructor(public payload: Ingredient[]) {}
+}
+
+
+export class UpdateIngredients implements Action {
+    readonly type = UPDATE_INGREDIENTS;
+    constructor(public payload: {index: number, update: Ingredient}) {}
+}
+
+export class DeleteIngredients implements Action {
+    readonly type = DELETE_INGREDIENTS;
+    constructor(public payload: number) {}
+}
+
+
+export type ShoppingListActions = AddIngredient | AddIngredients | DeleteIngredients | UpdateIngredients;
