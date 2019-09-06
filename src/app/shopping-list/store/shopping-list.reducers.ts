@@ -25,31 +25,47 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
         case ShoppingListActions.ADD_INGREDIENT:
             return {
                 ...state,
-                ingredients: [...state.ingrediants, action.payload]
+                ingrediants: [...state.ingrediants, action.payload]
             };
         case ShoppingListActions.ADD_INGREDIENTS:
             return {
                 ...state,
-                ingredients: [...state.ingrediants, ...action.payload]
+                ingrediants: [...state.ingrediants, ...action.payload]
             };
         case ShoppingListActions.UPDATE_INGREDIENTS:
-            const ingredient = state.ingrediants[action.payload.index];
+            const ingredient = state.ingrediants[state.editedIngredientIndex];
             const updateIngredient = {
                 ...ingredient,
-                ...action.payload.update
+                ...action.payload
             };
-            const ingredients = [...state.ingrediants];
-            ingredients[action.payload.index] = updateIngredient;
+            const ingrediants = [...state.ingrediants];
+            ingrediants[state.editedIngredientIndex] = updateIngredient;
             return {
                 ...state,
-                ingredients
+                ingrediants,
+                editedIngredientIndex: -1,
+                editedIngredient: null
             };
         case ShoppingListActions.DELETE_INGREDIENTS:
             const oldIngredients = [...state.ingrediants];
-            oldIngredients.splice(action.payload, 1);
+            oldIngredients.splice(state.editedIngredientIndex, 1);
             return{
                 ...state,
-                ingredients: oldIngredients
+                ingrediants: oldIngredients,
+                editedIngredientIndex: -1,
+                editedIngredient: null
+            };
+        case ShoppingListActions.START_EDIT:
+            return {
+                ...state,
+                editedIngredient: {...state.ingrediants[action.payload]},
+                editedIngredientIndex: action.payload
+            };
+        case ShoppingListActions.STOP_EDIT:
+            return {
+                ...state,
+                editedIngredient: null,
+                editedIngredientIndex: -1
             };
         default:
             return {...state};

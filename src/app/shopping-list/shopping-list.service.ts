@@ -24,7 +24,7 @@ export class ShoppingListService {
         } else {
             this.ingredients.map((curr) => {
                 if (curr.name === ingredient.name) {
-                    curr.amount = (Number(curr.amount) + Number(ingredient.amount))
+                    curr.amount = (Number(curr.amount) + Number(ingredient.amount));
                 }
             });
         }
