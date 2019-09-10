@@ -52,5 +52,6 @@ export class AuthService {
         let isAuthenticated: boolean;
         this.store.pipe(take(1)).subscribe(state => isAuthenticated = state.auth.authenticated);
         return isAuthenticated;
+        
     }
 }
