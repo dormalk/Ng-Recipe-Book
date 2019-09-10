@@ -80,7 +80,6 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log('Hewll');
     this.store.dispatch(new ShoppingListActions.StopEdit());
     this.subscription.unsubscribe();
   }

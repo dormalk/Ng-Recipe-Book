@@ -11,6 +11,7 @@ export class Signup implements Action {
 
 export class Signin implements Action {
     readonly type = SIGNIN;
+    constructor(public payload: string){}
 }
 
 export class Logout implements Action {

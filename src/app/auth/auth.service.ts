@@ -1,13 +1,24 @@
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import * as fromApp from '../store/app.reducers';
+import * as AuthActions from './store/auth.actions';
+
+import { Store } from '@ngrx/store';
+import { take } from 'rxjs/Operators';
 
 @Injectable()
 export class AuthService {
-    token: string;
-    constructor(private router: Router) {}
+    constructor(private router: Router,
+                private store: Store<fromApp.AppState>) {}
     signupUser(email: string, password: string) {
         firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(user => {
+                firebase.auth().currentUser.getIdToken()
+                .then((token: string) => {
+                    this.store.dispatch(new AuthActions.Signin(token))
+                });
+            })
             .catch(error => console.log(error));
     }
 
@@ -20,22 +31,26 @@ export class AuthService {
                     this.router.navigate(['/']);
                 }
                 firebase.auth().currentUser.getIdToken()
-                    .then((token: string) => this.token = token);
+                    .then((token: string) => {
+                        this.store.dispatch(new AuthActions.Signin(token))
+                    });
             });
     }
 
     logout() {
         firebase.auth().signOut();
-        this.token = null;
+        this.store.dispatch(new AuthActions.Logout());
     }
 
     getToken() {
-        firebase.auth().currentUser.getIdToken()
-            .then((token: string) => this.token = token);
-        return this.token;
+        let token: string;
+        this.store.pipe(take(1)).subscribe(state => token = state.auth.token);
+        return token;
     }
 
     isAuthenticated() {
-        return this.token != null;
+        let isAuthenticated: boolean;
+        this.store.pipe(take(1)).subscribe(state => isAuthenticated = state.auth.authenticated);
+        return isAuthenticated;
     }
 }
