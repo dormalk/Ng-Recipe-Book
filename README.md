@@ -38,16 +38,16 @@
     <img src="https://i.imgur.com/AnBHVuN.png" alt="logo" width="150" height="150"/>
   </a>
 
-  <h3 align="center">Expensify App</h3>
+  <h3 align="center">Recipes Book</h3>
 
   <p align="center">
-    Expenses management app - control on your money
+    Manage your recipes in one place
     <br />
     <a href="https://github.com/dormalk/Ng-Recipe-Book"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://goo.gl/iqtzZK" target="_blank">Open Exensify App</a>
-    ·
+    <a href="http://ng-recipe-book-deployment-dor.s3-website.eu-west-2.amazonaws.com/" target="_blank">Open Recipe Book</a>
+    
     <a href="https://github.com/dormalk/Ng-Recipe-Book/issues">Report Bug</a>
     ·
     <a href="https://github.com/dormalk/Ng-Recipe-Book/issues">Request Feature</a>
@@ -80,15 +80,17 @@
 ![product-screenshot][product-screenshot2]
 ![product-screenshot][product-screenshot3]
 ![product-screenshot][product-screenshot4]
-![product-screenshot][product-screenshot5]
 
 
-With Expensify - you have full control on your money expenses. you can manage reports and sumerize the total balance.
+Create your own recipe book and create uniq sopping list for the meals you wants to cook.
+With this recipe book you no longer neet phisical book that fades and corrupts.
+You can manage this book by smartphone or by desk computer in easily.
 
 ### Built With
 
-  * [React](https://reactjs.org/)
+  * [Angular 8](https://angular.io/)
   * [Firebase](https://firebase.google.com/)
+  * [Bootstrap](https://getbootstrap.com/)
 
 
 
@@ -98,9 +100,9 @@ With Expensify - you have full control on your money expenses. you can manage re
 Follow the next indtuction to run this project on local enviroment.
 ### Prerequisites
 
-* React
+* Angular
 ```sh
-npm install create-react-app
+npm install -g @angular/cli
 ```
 
 ### Installation
@@ -115,21 +117,20 @@ npm install
 ```
 3. Run app from CMD
 ```sh
-npm run start
+ng serve
 ```
 4. Follow the instruction on the opened web page
 ```sh
-http://localhost:3000
+http://localhost:4200
 ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-  - Login page - Login by email and password. (Optinal login with google account)
-  - Add Expense page - Create new expense and save on database
-  - Dashboard page - Present all expense and total balance(filtering optional)
-  - Edit page - Edit/Remove expense from database
-  - Tests - Snapshots tests, Functionality tests, Mocks
-  - <a href="https://goo.gl/iqtzZK" target="_blank">Link to Expensify</a>
+  - Recipes View page - View all recipes in your account
+  - CRUD Reacipes 
+  - Fetch ingredients to distinct list
+  - Save must modified list on data base
+  - <a href="http://ng-recipe-book-deployment-dor.s3-website.eu-west-2.amazonaws.com/" target="_blank">Link to Expensify</a>
 <!--_For more examples, please refer to the [Documentation](https://example.com)_-->
 
 
@@ -173,9 +174,8 @@ Project Link: [https://github.com/dormalk/Ng-Recipe-Book](https://github.com/dor
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [Git README.md Template](https://github.com/othneildrew/Best-README-Template)
-* [React](https://reactjs.org/)
-* [SCSS](https://sass-lang.com/guide)
+  * [Angular 8](https://angular.io/)
+  * [Bootstrap](https://getbootstrap.com/)
 
 
 
@@ -195,11 +195,9 @@ Project Link: [https://github.com/dormalk/Ng-Recipe-Book](https://github.com/dor
 [license-url]: https://github.com/dormalk/Ng-Recipe-Book/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dor-malka-444b94116/
-[product-screenshot1]: https://i.imgur.com/bGNBbbh.png
-[product-screenshot2]: https://i.imgur.com/izALc9q.png
-[product-screenshot3]: https://i.imgur.com/eR7msxH.png
-[product-screenshot4]: https://i.imgur.com/fBPux6l.png
-[product-screenshot5]: https://i.imgur.com/KZwh485.png
-
+[product-screenshot1]: https://i.imgur.com/UjkiS7y.png
+[product-screenshot2]: https://i.imgur.com/XgN96CU.png
+[product-screenshot3]: https://i.imgur.com/yd35paM.png
+[product-screenshot4]: https://i.imgur.com/YNCKyQC.png
 
 
