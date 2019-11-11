@@ -35,7 +35,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/dormalk/Ng-Recipe-Book">
-    <img src="https://i.imgur.com/AnBHVuN.png" alt="logo" width="150" height="150"/>
+    <img src="https://i.imgur.com/kbBgpgk.png" alt="logo" width="150" height="150"/>
   </a>
 
   <h3 align="center">Recipes Book</h3>
