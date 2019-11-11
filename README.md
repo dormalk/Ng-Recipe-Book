@@ -130,7 +130,7 @@ http://localhost:4200
   - CRUD Reacipes 
   - Fetch ingredients to distinct list
   - Save must modified list on data base
-  - <a href="http://ng-recipe-book-deployment-dor.s3-website.eu-west-2.amazonaws.com/" target="_blank">Link to Expensify</a>
+  - <a href="http://ng-recipe-book-deployment-dor.s3-website.eu-west-2.amazonaws.com/" target="_blank">Link to Recipes Book</a>
 <!--_For more examples, please refer to the [Documentation](https://example.com)_-->
 
 
