@@ -47,7 +47,7 @@
     <br />
     <br />
     <a href="http://ng-recipe-book-deployment-dor.s3-website.eu-west-2.amazonaws.com/" target="_blank">Open Recipe Book</a>
-    
+    .
     <a href="https://github.com/dormalk/Ng-Recipe-Book/issues">Report Bug</a>
     ·
     <a href="https://github.com/dormalk/Ng-Recipe-Book/issues">Request Feature</a>
